@@ -5,7 +5,7 @@ import "./index.css";
 
 
 // 1 - configurando router
-import { createBrowserRouter, RouterProvider, Route} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Route, Navigate} from "react-router-dom";
 
 // 2 - página de contato
 import Contact from './routes/Contact.jsx';
@@ -56,6 +56,11 @@ const router = createBrowserRouter ([
       {
         path: "search",
         element: <Search />,
+      },
+      // 10 - redirect
+      {
+        path: "teste",
+        element: <Navigate to="/" />
       },
     ]
 
