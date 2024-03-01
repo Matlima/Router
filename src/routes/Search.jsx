@@ -3,9 +3,15 @@ import React from 'react'
 // 6 - carregando dados
 import {useFetch} from '../hooks/useFetch';
 
-const url = "http://localhost:3000/products";
+import { Link, useSearchParams } from "react-router-dom";
+
+
 
 const Search = () => {
+
+    const [searchParams] = useSearchParams();
+
+    const url = "http://localhost:3000/products?" + searchParams;
 
     const {data: items} = useFetch(url);
 

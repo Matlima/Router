@@ -1,6 +1,7 @@
+import React from 'react'
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 
 const SearchForms = () => {
 
@@ -8,11 +9,12 @@ const SearchForms = () => {
     const [query, setQuery] = useState();
 
     const handleSubmit = (e) => {
-        e.prevent
+        e.preventDefault();
+        navigate("/search?q=" + query);
     }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
         <input type="text" onChange={(e) => setQuery(e.target.value)}/>
         <input type="submit" value="Buscar" />
     </form>
